@@ -1,0 +1,52 @@
+{
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "editor.rulers": [
+    120
+  ],
+  "prettier.printWidth": 120,
+  "eslint.enable": true,
+  "eslint.packageManager": "yarn",
+  "eslint.nodePath": ".",
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
+  "explorerExclude.backup": null,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    "**/node_modules": true,
+    "**/tsconfig.tsbuildinfo": true,
+    "**/cdk.out": true,
+    "**/.cdk.staging": true,
+    "**/.webpackCache": true,
+    "**/.serverless": true,
+    "**/.cache": true,
+    "**/.build": true,
+    "**/lib/**/*.js": true,
+    "**/lib/**/*.d.ts": true
+  },
+  "npm.packageManager": "yarn",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "prettier.useEditorConfig": true,
+}

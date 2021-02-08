@@ -1,0 +1,5 @@
+language: typescript
+app: ts-node .
+output: out
+imports:
+  - k8s
