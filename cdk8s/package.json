@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "cdk8s": "^1.0.0-beta.8",
-    "constructs": "^3.3.12",
+    "cdk8s-plus-17": "^1.0.0-beta.8",
+    "constructs": "^3.3.14",
     "mobx": "^5.15.7"
   },
   "devDependencies": {
