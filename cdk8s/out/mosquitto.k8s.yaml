@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-mosquitto
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      cdk8s.deployment: deployment-mosquitto
+  template:
+    metadata:
+      labels:
+        cdk8s.deployment: deployment-mosquitto
+    spec:
+      containers:
+        - env: []
+          image: eclipse-mosquitto:2
+          imagePullPolicy: Always
+          name: main
+          ports: []
+          volumeMounts:
+            - mountPath: /mosquitto/config/mosquitto.conf
+              name: config
+              readOnly: true
+              subPath: mosquitto.conf
+      volumes:
+        - configMap:
+            items:
+              - key: mosquitto.conf
+                path: mosquitto.conf
+            name: config-mosquitto
+          name: config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-mosquitto
+spec:
+  externalIPs: []
+  ports:
+    - name: mqtt
+      nodePort: 32010
+      port: 1883
+  selector:
+    cdk8s.deployment: deployment-mosquitto
+  type: NodePort
+---
+apiVersion: v1
+data:
+  mosquitto.conf: "
+
+    retain_available false
+
+    allow_zero_length_clientid true
+
+    log_dest stdout
+
+    listener 1883
+
+    protocol mqtt
+
+    allow_anonymous true
+
+    require_certificate false
+
+    use_identity_as_username false
+
+    \        "
+kind: ConfigMap
+metadata:
+  name: config-mosquitto
