@@ -1,0 +1,14 @@
+{
+  "name": "message-publish",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --build --force",
+    "debug": "ts-node-dev --prefer-ts --clear --respawn lib"
+  },
+  "main": "lib/",
+  "dependencies": {
+    "mqtt": "^4.2.6"
+  }
+}
